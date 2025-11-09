@@ -101,7 +101,7 @@ Tested multiple regression models:
 
 The trained Random Forest model for predicting EV Battery Health (SOH) is available here:
 
-🔗 Download final_rf_model.pkl (Google Drive)
+🔗 Download final_rf_model.pkl (Google Drive) [https://drive.google.com/file/d/1hjMp2rsHz_U0vKUwe2s722NsosUkRebh/view?usp=share_link]
 
 ℹ️ Due to GitHub’s 25 MB limit, the model is hosted externally on Google Drive.
 Download it and place it in your working directory before running predictions.
