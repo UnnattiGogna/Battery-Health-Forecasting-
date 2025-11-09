@@ -1,19 +1,109 @@
-# Battery-Health-Forecasting-
 
-Electric vehicle batteries slowly lose health over time due to driving habits, charging patterns, and temperature conditions.
-This project uses Generative AI to forecast and simulate how an EV battery’s health will change in the future — under different usage and sustainability scenarios.
-Instead of giving one fixed prediction, our AI imagines multiple possible futures for a battery — showing how small behavior changes (like avoiding fast charging or extreme SoC ranges) can make it last years longer.
+# 🔋 EV Battery Health Prediction ML
 
-The system learns from real-world EV data such as:
-1.State of Charge (SoC)
-2.State of Health (SoH)
-3.Battery temperature
-4.Battery capacity
-5.Driving and charging behavior
+Predict and monitor the **battery health (State of Health – SOH)** of Electric Vehicles (EVs) using real-world performance, charging, and environmental data.
+This helps manufacturers, fleet owners, and individual users **detect battery degradation early** and **extend battery lifespan** efficiently.
 
-Using this data, the model shall:
-1.Predict battery degradation patterns over time
-2.Generate multiple “what-if” scenarios to show how user behavior impacts battery life
-3.Promote sustainable driving and charging habits
-4.Support circular economy decisions by identifying when batteries can be repurposed for second-life use
-Ultimately, it shall help both EV users and manufacturers make smarter, greener, and longer-lasting decisions — powering sustainability with AI.
+---
+
+## 🧩 Problem Statement
+
+Battery degradation is one of the most critical challenges for Electric Vehicles.
+Over time, due to charging cycles, temperature fluctuations, and driving behavior, the **battery’s State of Health (SOH)** declines — reducing range and performance.
+
+The goal of this project is to build an **ML model** that can accurately **predict the battery’s SOH** based on various measurable factors like:
+
+* Battery voltage and current
+* Charging and discharging cycles
+* Temperature and ambient conditions
+* Energy consumption patterns
+* Vehicle model and manufacturer
+
+This prediction allows users to monitor **battery condition**, **plan replacements**, and **optimize charging behavior** proactively.
+
+---
+
+## 🛠️ Approach / Solution
+
+We designed and trained a regression model to estimate the **SOH** of EV batteries.
+Here’s how we approached the problem step-by-step:
+
+### 1️⃣ Data Collection & Cleaning
+
+* Merged multiple EV datasets containing **battery specs**, **charging patterns**, and **vehicle information**.
+* Removed missing or inconsistent entries.
+* Engineered new features such as:
+
+  * Temperature-centered and temperature-squared columns
+  * Normalized voltage and cycle-based degradation ratios
+
+🧾 Final dataset: `final_merged_ev_dataset.csv`
+
+---
+
+### 2️⃣ Exploratory Data Analysis (EDA)
+
+* Analyzed correlations between temperature, cycles, and SOH.
+* Visualized degradation patterns across brands and time.
+* Identified **key influencing features** — temperature, charge cycles, and voltage had the strongest correlation with SOH drop.
+
+---
+
+### 3️⃣ Model Selection
+
+Tested multiple regression models:
+
+| Model                         | R² Score  | MAE      | Remarks                        |
+| ----------------------------- | --------- | -------- | ------------------------------ |
+| Linear Regression             | 0.21      | 3.6      | Weak correlation               |
+| Decision Tree                 | 0.43      | 2.9      | Moderate performance           |
+| **Random Forest Regressor** ✅ | **0.66+** | **1.47** | Best performance and stability |
+
+✅ **Selected Model:** Random Forest Regressor
+
+---
+
+### 4️⃣ Model Training & Evaluation
+
+* **Train/Test Split:** 80% training, 20% testing
+* **Evaluation Metrics:** R² Score, Mean Absolute Error (MAE)
+* **Final Model Performance:**
+
+| Metric   | Value      |
+| -------- | ---------- |
+| R² Score | **0.6678** |
+| MAE      | **1.4786** |
+
+---
+
+## 📊 Dataset
+
+**Key Features Used:**
+
+* `voltage`
+* `current`
+* `temperature`
+* `cycles`
+* `charging_time`
+* `vehicle_model`
+* `manufacturer`
+* Engineered: `temp_centered`, `temp_squared`
+
+**Target Variable:**
+
+* `soh` — State of Health (in %)
+
+📁 Dataset: `final_merged_ev_dataset.csv`
+
+---
+
+Enhancements & Future Scope
+
+* Integrate real-time telemetry data for continuous SOH monitoring.
+* Deploy as an **API endpoint** for EV dashboards.
+* Implement **LSTM or XGBoost** for time-series degradation tracking.
+* Add explainability layer using **SHAP** or **LIME** to interpret feature impact.
+
+
+
+Would you like me to **add a “Visualization Section”** (showing actual vs predicted SOH graph and feature importance plot with code snippets) to make your README look even more research-grade for GitHub or hackathon submission?
