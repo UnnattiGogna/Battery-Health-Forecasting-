@@ -25,8 +25,8 @@ This prediction allows users to monitor **battery condition**, **plan replacemen
 
 ## 🛠️ Approach / Solution
 
-We designed and trained a regression model to estimate the **SOH** of EV batteries.
-Here’s how we approached the problem step-by-step:
+I have designed and trained a regression model to estimate the **SOH** of EV batteries.
+Here’s how I've approached the problem step-by-step:
 
 ### 1️⃣ Data Collection & Cleaning
 
@@ -106,4 +106,3 @@ Enhancements & Future Scope
 
 
 
-Would you like me to **add a “Visualization Section”** (showing actual vs predicted SOH graph and feature importance plot with code snippets) to make your README look even more research-grade for GitHub or hackathon submission?
