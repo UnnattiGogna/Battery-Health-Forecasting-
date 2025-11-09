@@ -37,7 +37,6 @@ Here’s how I've approached the problem step-by-step:
   * Temperature-centered and temperature-squared columns
   * Normalized voltage and cycle-based degradation ratios
 
-🧾 Final dataset: `final_merged_ev_dataset.csv`
 
 ---
 
@@ -92,8 +91,6 @@ Tested multiple regression models:
 **Target Variable:**
 
 * `soh` — State of Health (in %)
-
-📁 Dataset: `final_merged_ev_dataset.csv`
 
 ---
 
