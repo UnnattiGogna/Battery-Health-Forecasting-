@@ -1,0 +1,17 @@
+🔋 EV Battery Health Prediction Model
+
+Model Name: final_rf_model.pkl  
+Model Type: Random Forest Regressor  
+Accuracy (R²): 0.6678  
+MAE: 1.4786  
+
+📦 Download Link:
+https://drive.google.com/file/d/1hjMp2rsHz_U0vKUwe2s722NsosUkRebh/view?usp=share_link
+
+📘 Instructions:
+1️⃣ Download the file using the link above.
+2️⃣ Place it in your working directory.
+3️⃣ Load it in your notebook with:
+   ```python
+   import joblib
+   model = joblib.load("final_rf_model.pkl")
