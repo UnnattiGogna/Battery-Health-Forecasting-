@@ -11,7 +11,7 @@ This helps manufacturers, fleet owners, and individual users **detect battery de
 Battery degradation is one of the most critical challenges for Electric Vehicles.
 Over time, due to charging cycles, temperature fluctuations, and driving behavior, the **battery’s State of Health (SOH)** declines — reducing range and performance.
 
-The goal of this project is to build an **ML model** that can accurately **predict the battery’s SOH** based on various measurable factors like:
+The goal of this project was to build an **ML model** that can accurately **predict the battery’s SOH** based on various measurable factors like:
 
 * Battery voltage and current
 * Charging and discharging cycles
